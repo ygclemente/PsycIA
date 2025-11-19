@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #d5f6fd;
   overflow-x: hidden;
   color: #1a1a3f;
@@ -62,7 +62,7 @@ nav a {
   border-radius: 20px;
   border: none;
   background-color: #b9e4ff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -97,7 +97,7 @@ nav a {
   background-color: #c9dbe6be;
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-height: 300px;
   overflow-y: auto;
   display: none;
@@ -109,14 +109,14 @@ nav a {
   background-color: #a4d2f1;
   color: #0a1f33;
   align-self: flex-end;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .message.bot {
   background-color: #4f4a9c9d;
   color: #1b1b1b;
   align-self: flex-start;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .message {
@@ -125,7 +125,7 @@ nav a {
   max-width: 70%;
   font-size: 16px;
   font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== Botão Modo ===== */
@@ -180,25 +180,40 @@ nav a {
   min-width: 140px;
   background-color: #f0f0f0;
   color: #333;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .botoes-emocoes button:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .botoes-emocoes button:focus {
   outline: 3px solid #4970c0;
-  box-shadow: 0 0 0 4px rgba(73,112,192,0.3);
+  box-shadow: 0 0 0 4px rgba(73, 112, 192, 0.3);
 }
 
 /* Cores por emoção */
-.botoes-emocoes button.muito-ansioso { background-color: #ffd6d6; color: #7a2b2b; }
-.botoes-emocoes button.ansioso      { background-color: #ffe7c2; color: #8a5c2c; }
-.botoes-emocoes button.neutro       { background-color: #fffecf; color: #7a7a4f; }
-.botoes-emocoes button.calmo        { background-color: #d1f5d3; color: #2e5f36; }
-.botoes-emocoes button.muito-calmo  { background-color: #d0f8f4; color: #2c4f4c; }
+.botoes-emocoes button.muito-ansioso {
+  background-color: #ffd6d6;
+  color: #7a2b2b;
+}
+.botoes-emocoes button.ansioso {
+  background-color: #ffe7c2;
+  color: #8a5c2c;
+}
+.botoes-emocoes button.neutro {
+  background-color: #fffecf;
+  color: #7a7a4f;
+}
+.botoes-emocoes button.calmo {
+  background-color: #d1f5d3;
+  color: #2e5f36;
+}
+.botoes-emocoes button.muito-calmo {
+  background-color: #d0f8f4;
+  color: #2c4f4c;
+}
 
 /* Estado ativo */
 .botoes-emocoes button.ativo {
@@ -216,7 +231,9 @@ nav a {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-#mensagem-registrada.show { opacity: 1; }
+#mensagem-registrada.show {
+  opacity: 1;
+}
 
 /* ===== Quick Actions ===== */
 .quick-actions {
@@ -233,7 +250,7 @@ nav a {
 
 .actions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
   max-width: 900px;
   margin: 0 auto;
@@ -244,7 +261,7 @@ nav a {
   border-radius: 12px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -265,21 +282,44 @@ nav a {
   color: #444;
 }
 
-.icon { font-size: 1.6rem; margin-bottom: 6px; }
-.blue   { color: #2d9cdb; }
-.purple { color: #9b51e0; }
-.pink   { color: #eb5757; }
-.green  { color: #27ae60; }
+.icon {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.blue {
+  color: #2d9cdb;
+}
+.purple {
+  color: #9b51e0;
+}
+.pink {
+  color: #eb5757;
+}
+.green {
+  color: #27ae60;
+}
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
-  header { padding: 10px 20px; flex-direction: column; gap: 10px; }
-  nav ul { justify-content: center; }
-  .actions-grid { grid-template-columns: 1fr 1fr; }
+  header {
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav ul {
+    justify-content: center;
+  }
+  .actions-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 480px) {
-  .actions-grid { grid-template-columns: 1fr; }
-  .action-card { padding: 12px; }
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .action-card {
+    padding: 12px;
+  }
 }
 
 /* ===== Modal Perfil ===== */
@@ -287,7 +327,7 @@ nav a {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   justify-content: center;
   align-items: center;
@@ -303,7 +343,7 @@ nav a {
   width: 340px;
   text-align: center;
   position: relative;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -349,29 +389,27 @@ nav a {
   background: linear-gradient(135deg, #11253b54, #a5d9f8);
   color: #2a2a2a;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 .perfil-opcoes button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
 }
 
 #sobre-nos {
-    background: #d5f6fd;
-  padding: 60px 20px;
+  padding: 200px 20px;
   text-align: center;
   font-family: "Poppins", sans-serif;
 }
 
 #sobre-nos h2 {
   font-size: 1.8em;
-  color: #2e3a46;
+
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 #sobre-nos .descricao-site {
-  color: #5b6a75;
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.6;
@@ -423,8 +461,6 @@ nav a {
   margin: 0;
 }
 
-
-
 /* ===== DARK MODE ===== */
 body.dark-mode {
   background: linear-gradient(135deg, #0a1622 0%, #101926 100%);
@@ -469,12 +505,29 @@ body.dark-mode .message.bot {
   background-color: #415a77;
   color: #e0e6ed;
 }
-body.dark-mode .botoes-emocoes button.muito-ansioso { background: #7a2b2b; color: #f0f6fc; }
-body.dark-mode .botoes-emocoes button.ansioso { background: #8a5c2c; color: #f0f6fc; }
-body.dark-mode .botoes-emocoes button.neutro { background: #7a7a4f; color: #f0f6fc; }
-body.dark-mode .botoes-emocoes button.calmo { background: #2e5f36; color: #f0f6fc; }
-body.dark-mode .botoes-emocoes button.muito-calmo { background: #2c4f4c; color: #f0f6fc; }
-body.dark-mode .botoes-emocoes button:focus { box-shadow: 0 0 0 4px rgba(45,156,219,0.6); }
+body.dark-mode .botoes-emocoes button.muito-ansioso {
+  background: #7a2b2b;
+  color: #f0f6fc;
+}
+body.dark-mode .botoes-emocoes button.ansioso {
+  background: #8a5c2c;
+  color: #f0f6fc;
+}
+body.dark-mode .botoes-emocoes button.neutro {
+  background: #7a7a4f;
+  color: #f0f6fc;
+}
+body.dark-mode .botoes-emocoes button.calmo {
+  background: #2e5f36;
+  color: #f0f6fc;
+}
+body.dark-mode .botoes-emocoes button.muito-calmo {
+  background: #2c4f4c;
+  color: #f0f6fc;
+}
+body.dark-mode .botoes-emocoes button:focus {
+  box-shadow: 0 0 0 4px rgba(45, 156, 219, 0.6);
+}
 body.dark-mode .action-card {
   background: #16213a;
   color: #e0e6ed;
@@ -492,7 +545,7 @@ body.dark-mode .quick-actions h3 {
   color: #58a6ff;
 }
 body.dark-mode .descricao-perfil {
-  color: #a9bcd0;
+  color: #e4e8ec;
 }
 body.dark-mode .modal-perfil .modal-content {
   background: #16213a;
@@ -504,4 +557,13 @@ body.dark-mode .fechar-modal {
 body.dark-mode .perfil-opcoes button {
   background: linear-gradient(135deg, #22304a, #274472);
   color: #e0e6ed;
+}
+body.dark-mode #sobre-nos {
+  background: #16213a;
+}
+body.dark-mode .card-membro p {
+  color: rgb(221, 218, 218);
+}
+body.dark-mode .descricao-site {
+  color: white;
 }

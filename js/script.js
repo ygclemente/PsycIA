@@ -9,8 +9,10 @@ window.onload = function () {
 
   if (nomeParaMostrar && nomeParaMostrar !== "anonimo") {
     let saudacao;
-    if (genero === "masculino") saudacao = `Olá, ${nomeParaMostrar}! Seja bem-vindo 🧠✨`;
-    else if (genero === "feminino") saudacao = `Olá, ${nomeParaMostrar}! Seja bem-vinda 🧠✨`;
+    if (genero === "masculino")
+      saudacao = `Olá, ${nomeParaMostrar}! Seja bem-vindo 🧠✨`;
+    else if (genero === "feminino")
+      saudacao = `Olá, ${nomeParaMostrar}! Seja bem-vinda 🧠✨`;
     else saudacao = `Olá, ${nomeParaMostrar}! Seja bem-vindo🧠✨`;
     div.innerText = saudacao;
   } else {
@@ -19,6 +21,15 @@ window.onload = function () {
 };
 
 // --- Enviar mensagem ---
+document
+  .getElementById("userInput")
+  .addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      enviarMensagem(); // chama sua função sem precisar do botão
+    }
+  });
+
 async function enviarMensagem(event) {
   event?.preventDefault();
   const input = document.getElementById("userInput");
@@ -34,10 +45,12 @@ async function enviarMensagem(event) {
     "me suicidar",
     "quero morrer",
     "vida não vale a pena",
-    "tirar minha vida"
+    "tirar minha vida",
   ];
   const textoMinusculo = texto.toLowerCase();
-  const risco = palavrasDeRisco.some(palavra => textoMinusculo.includes(palavra));
+  const risco = palavrasDeRisco.some((palavra) =>
+    textoMinusculo.includes(palavra)
+  );
   const chat = document.getElementById("chatBox");
   const chatContainer = document.querySelector(".chat-container");
 
@@ -70,12 +83,14 @@ async function enviarMensagem(event) {
     // Mensagem "digitando"
     const typingMsg = document.createElement("div");
     typingMsg.className = "digitando";
-    typingMsg.innerHTML = '💬 PsicIA está digitando <div class="typing-dots"><span></span><span></span><span></span></div>';
+    typingMsg.innerHTML =
+      '💬 PsicIA está digitando <div class="typing-dots"><span></span><span></span><span></span></div>';
     chat.appendChild(typingMsg);
     chat.scrollTop = chat.scrollHeight;
 
     // Chave e chamada da API
-    const chave = "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"; // SO MUDA AQUI!
+    const chave =
+      "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"; // SO MUDA AQUI!
     let resposta = "Desculpe, não entendi.";
     try {
       const response = await fetch(
@@ -91,7 +106,8 @@ async function enviarMensagem(event) {
             messages: [
               {
                 role: "system",
-                content: "Você é PsicIA, uma IA que conversa como um amigo legal. Use linguagem leve, curta (até 500 caracteres), direta e acolhedora. Seja empático e um pouco racional para ajudar, e use emojis para deixar a mensagem mais amigável. Evite respostas secas ou formais.",
+                content:
+                  "Você é PsicIA, uma IA que conversa como um amigo legal. Use linguagem leve, curta (até 500 caracteres), direta e acolhedora. Seja empático e um pouco racional para ajudar, e use emojis para deixar a mensagem mais amigável. Evite respostas secas ou formais.",
               },
               { role: "user", content: texto },
             ],
@@ -176,7 +192,6 @@ function toggleDarkMode() {
     localStorage.setItem("modoNoturno", "inativo");
   }
 }
-
 
 // --- Perfil ---
 const modalPerfil = document.getElementById("modalPerfil");
