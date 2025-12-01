@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós </title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <header>
+    <button onclick="toggleDarkMode()" class="modo-btn" id="darkModeBtn">
+      <i class="fa-regular fa-moon"></i>
+    </button>
+
+    <div class="logo">
+      <a href="../index.html"> <img src="../img/logo.png" alt="Logo" style="height: 85px;" /></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../html/sobre.html">Sobre</a></li>
+        <li><a href="#" id="abrirPerfilLink" onclick="abrirPerfil()"><i class="fa-solid fa-user"></i></a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Sobre Nós -->
+  <section id="sobre-nos">
+    <div class="container-sobre-nos">
+      <h2>Sobre nós</h2>
+      <p class="descricao-site">
+        Nosso objetivo com este site é oferecer um ambiente seguro e acolhedor para pessoas que buscam apoio emocional,
+        meditação e recursos de bem-estar. Cada membro da nossa equipe contribuiu para tornar esta experiência
+        acessível, interativa e educativa.
+      </p>
+      <div class="cards-equipe">
+
+        <div class="card-membro">
+         <a  target="_blank" href="https://www.github.com/laraaga"><img src="../img/avatar1.png" alt="Membro 1"></a> 
+          <h3>Larah</h3>
+          <p>Responsável pelo design e front-end do TCC.</p>
+        </div>
+
+        <div class="card-membro">
+          <a target="_blank" href="https://www.github.com/ygclemente"><img src="../img/avatar2.png" alt="Membro 2"></a>
+          <h3>Yago</h3>
+          <p>Desenvolvedor back-end, cuida da lógica do site.</p>
+        </div>
+       
+        <div class="card-membro">
+         <a target="_blank" href="https://www.github.com/viniiimelo"><img src="../img/avatar3.png" alt="Membro 3"></a>
+
+          <h3>Vinicius</h3>
+          <p>Pesquisador e desenvolvedor do banco de dados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer-sobre">Criado com carinho pelo time <a href="../index.html">PsycIA®</a></footer>
+   <!-- Modal de Perfil -->
+  <div id="modalPerfil" class="modal-perfil">
+    <div class="modal-content">
+      <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
+      <h2>Meu Perfil 🌙</h2>
+      <p class="descricao-perfil">
+        Aqui você pode acompanhar seu bem-estar e progresso emocional 💛
+      </p>
+      <div class="perfil-opcoes">
+      
+        <button onclick="window.open('../html/perfil.html', '_blank')">👤 Minha Conta [BETA]</button>
+
+        <button onclick="window.open('html/configuracoes.html', '_blank')">⚙️ Configurações</button>
+         
+        <button onclick="logout()">🚪 Sair da conta</button>
+      </div>
+    </div>
+  </div>
+ 
+</body>
+ <script src="../js/script.js"></script>
+
+</html>
