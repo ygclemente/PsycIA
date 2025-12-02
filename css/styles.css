@@ -162,6 +162,21 @@ nav a {
   text-align: center;
   margin: 30px 0;
 }
+.botoes-emocoes button.muito-ansioso .material-symbols-outlined {
+  color: #2b0101;
+}
+.botoes-emocoes button.ansioso .material-symbols-outlined {
+  color: #58330a;
+}
+.botoes-emocoes button.neutro .material-symbols-outlined {
+  color: #535305;
+}
+.botoes-emocoes button.calmo .material-symbols-outlined {
+  color: #023f0c;
+}
+.botoes-emocoes button.muito-calmo .material-symbols-outlined {
+  color: #013530;
+}
 
 .botoes-emocoes {
   display: flex;
@@ -232,7 +247,7 @@ nav a {
   margin-top: 15px;
   font-size: 16px;
   font-weight: 500;
-  color: #1a1a3f;
+  color: #5959ad;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -515,23 +530,23 @@ body.dark-mode .message.bot {
 }
 body.dark-mode .botoes-emocoes button.muito-ansioso {
   background: #7a2b2b;
-  color: #f0f6fc;
+  color: #ffd6d6;
 }
 body.dark-mode .botoes-emocoes button.ansioso {
   background: #8a5c2c;
-  color: #f0f6fc;
+  color: #ffe7c2;
 }
 body.dark-mode .botoes-emocoes button.neutro {
   background: #7a7a4f;
-  color: #f0f6fc;
+  color: #fffecf;
 }
 body.dark-mode .botoes-emocoes button.calmo {
   background: #2e5f36;
-  color: #f0f6fc;
+  color: #d1f5d3;
 }
 body.dark-mode .botoes-emocoes button.muito-calmo {
   background: #2c4f4c;
-  color: #f0f6fc;
+  color: #d0f8f4;
 }
 body.dark-mode .botoes-emocoes button:focus {
   box-shadow: 0 0 0 4px rgba(45, 156, 219, 0.6);
@@ -607,3 +622,4 @@ box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.93);
   text-align: center;
   padding-top:26px ;
 }
+

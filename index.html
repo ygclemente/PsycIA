@@ -6,7 +6,7 @@
   <title>PsycIA</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+ <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 <body>
   <header>
@@ -36,14 +36,29 @@
 
     <!-- Emoções -->
     <section id="emocoes">
-      <div class="botoes-emocoes">
-        <button class="muito-ansioso" onclick="registrarEmocao('Muito Ansioso')"> Muito Ansioso</button>
-        <button class="ansioso" onclick="registrarEmocao('Ansioso')"> Ansioso</button>
-        <button class="neutro" onclick="registrarEmocao('Neutro')"> Neutro</button>
-        <button class="calmo" onclick="registrarEmocao('Calmo')"> Calmo</button>
-        <button class="muito-calmo" onclick="registrarEmocao('Muito Calmo')"> Muito Calmo</button>
-      </div>
-      <div id="mensagem-registrada"></div>
+ <div class="botoes-emocoes">
+  <button class="muito-ansioso" onclick="registrarEmocao('Muito Ansioso')">
+    <span class="material-symbols-outlined">sentiment_very_dissatisfied</span>
+    Muito Ansioso
+  </button>
+  <button class="ansioso" onclick="registrarEmocao('Ansioso')">
+    <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+    Ansioso
+  </button>
+  <button class="neutro" onclick="registrarEmocao('Neutro')">
+    <span class="material-symbols-outlined">sentiment_neutral</span>
+    Neutro
+  </button>
+  <button class="calmo" onclick="registrarEmocao('Calmo')">
+    <span class="material-symbols-outlined">sentiment_satisfied</span>
+    Calmo
+  </button>
+  <button class="muito-calmo" onclick="registrarEmocao('Muito Calmo')">
+    <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+    Muito Calmo
+  </button>
+</div>
+<div id="mensagem-registrada"></div>
     </section>
 
     <p id="mensagem">Selecione uma emoção acima </p>
@@ -78,7 +93,7 @@
         <span class="material-symbols-outlined">person_search</span>
       </div>
       <h4>Ajuda</h4>
-      <p>Buscar psicólogos</p>
+      <p>Buscar psicólogos <br> perto de você</p>
     </div>
 
     <!-- DIÁRIO -->
@@ -110,17 +125,21 @@
       <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
       <h2>Meu Perfil </h2>
       <p class="descricao-perfil">
-        Aqui você pode acompanhar seu bem-estar e progresso emocional 💛
+        Aqui você pode acompanhar seu bem-estar e progresso emocional 
       </p>
       <div class="perfil-opcoes">
-        <button onclick="window.open('html/perfil.html', '_blank')">👤 Minha Conta [BETA]</button>
+        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta [BETA]</button>
       
-        <button onclick="window.open('html/configuracoes.html', '_blank')">⚙️ Configurações</button>
+        <button onclick="window.open('html/configuracoes.html', '_blank')"> Configurações</button>
          
-        <button onclick="logout()">🚪 Sair da conta</button>
+        <button onclick="logout()"> Sair da conta</button>
       </div>
     </div>
   </div>
+
+   
+    </body>
+</html>
 
 
 

@@ -76,91 +76,7 @@ body.dark-mode .modo-btn:hover {
   color: #e0e6ed;
   transform: rotate(-20deg) scale(1.1);
 }
-body.dark-mode .chat-bar-container input {
-  background-color: #1b263b;
-  color: #e0e6ed;
-}
-body.dark-mode .chat-bar-container button {
-  background-color: #274472;
-}
-body.dark-mode .chat-bar-container button:hover {
-  background-color: #58a6ff;
-}
-body.dark-mode .chat-container {
-  background-color: #16213a;
-  color: #e0e6ed;
-  box-shadow: 0 4px 8px rgba(24, 40, 72, 0.5);
-}
-body.dark-mode .message.user {
-  background-color: #274472;
-  color: #e0e6ed;
-}
-body.dark-mode .message.bot {
-  background-color: #415a77;
-  color: #e0e6ed;
-}
-body.dark-mode .botoes-emocoes button.muito-ansioso {
-  background: #7a2b2b;
-  color: #f0f6fc;
-}
-body.dark-mode .botoes-emocoes button.ansioso {
-  background: #8a5c2c;
-  color: #f0f6fc;
-}
-body.dark-mode .botoes-emocoes button.neutro {
-  background: #7a7a4f;
-  color: #f0f6fc;
-}
-body.dark-mode .botoes-emocoes button.calmo {
-  background: #2e5f36;
-  color: #f0f6fc;
-}
-body.dark-mode .botoes-emocoes button.muito-calmo {
-  background: #2c4f4c;
-  color: #f0f6fc;
-}
-body.dark-mode .botoes-emocoes button:focus {
-  box-shadow: 0 0 0 4px rgba(45, 156, 219, 0.6);
-}
-body.dark-mode .action-card {
-  background: #16213a;
-  color: #e0e6ed;
-  box-shadow: 0 2px 8px rgba(24, 40, 72, 0.5);
-}
-body.dark-mode .action-card h4 {
-  color: #58a6ff;
-}
-body.dark-mode .action-card p {
-  color: #a9bcd0;
-}
-body.dark-mode h2,
-body.dark-mode #emocoes h2,
-body.dark-mode .quick-actions h3 {
-  color: #58a6ff;
-}
-body.dark-mode .descricao-perfil {
-  color: #e4e8ec;
-}
-body.dark-mode .modal-perfil .modal-content {
-  background: #16213a;
-  color: #e0e6ed;
-}
-body.dark-mode .fechar-modal {
-  color: #58a6ff;
-}
-body.dark-mode .perfil-opcoes button {
-  background: linear-gradient(135deg, #22304a, #274472);
-  color: #e0e6ed;
-}
-body.dark-mode #sobre-nos {
-  background: #16213a;
-}
-body.dark-mode .card-membro p {
-  color: rgb(221, 218, 218);
-}
-body.dark-mode .descricao-site {
-  color: white;
-}
+
 
 /* Main */
 h1 { font-size: 2.2em; margin-top: 40px; color: #226fa4; font-weight: 700; }
@@ -210,10 +126,10 @@ body.dark-mode button {
     color:#fff; 
 }
 body.dark-mode button:hover {
-    background:#58a6ff; 
-    color:#161b22; 
+    background: #4970c0cc;
+    color: #fff;
+    transform: scale(1.05);
 }
-
 /* Timer Circular */
 .timer-container { position: relative; width: 180px; height: 180px; margin: 30px auto; }
 .timer-container svg { transform: rotate(-90deg); }

@@ -34,7 +34,9 @@
 
 
   <h1>Vamos Respirar Juntos</h1>
-  <div id="circulo"></div>
+  <div id="circulo"  class="aurora-circle"></div>
+    
+  </div>
   <p id="textoRespiracao">Clique em "Iniciar" para começar</p>
 
   <div class="botoes">
@@ -45,20 +47,21 @@
   <div id="modalPerfil" class="modal-perfil">
     <div class="modal-content">
       <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
-      <h2>Meu Perfil 🌙</h2>
+      <h2>Meu Perfil </h2>
       <p class="descricao-perfil">
-        Aqui você pode acompanhar seu bem-estar e progresso emocional 💛
+        Aqui você pode acompanhar seu bem-estar e progresso emocional 
       </p>
       <div class="perfil-opcoes">
-        <button onclick="window.open('../html/perfil.html', '_blank')">👤 Minha Conta [BETA]</button>
+         <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta [BETA]</button>
       
-        <button onclick="window.open('../html/configuracoes.html', '_blank')">⚙️ Configurações</button>
+        <button onclick="window.open('../html/configuracoes.html', '_blank')">Configurações</button>
          
-        <button onclick="logout()">🚪 Sair da conta</button>
+        <button onclick="logout()"> Sair da conta</button>
       </div>
     </div>
   </div>
   <script>
+    
    const texto = document.getElementById("textoRespiracao"); 
 const circulo = document.getElementById("circulo");
 const btnIniciar = document.getElementById("btnIniciar");
@@ -109,6 +112,8 @@ function iniciarRespiracao() {
   mostrarFase();
 }
 
+
+
 function pararRespiracao() {
   clearTimeout(timeout);
   timeout = null;
@@ -117,6 +122,7 @@ function pararRespiracao() {
   circulo.classList.remove("animar");
   texto.textContent = 'Clique em "Iniciar" para começar';
 }
+
 
 function voltarInicio() {
   pararRespiracao();
@@ -142,6 +148,7 @@ function toggleDarkMode() {
   }
 }
  
+
 
   </script>
   <script src="../js/script.js"></script>

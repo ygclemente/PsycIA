@@ -64,8 +64,9 @@
       <option value="nenhum">Sem Som</option>
     </select>
     <div class="audio-controls">
-      <button id="playPauseBtn" type="button">▶️</button>
+      <button id="playPauseBtn" type="button">▶</button>
       <span id="nomeSom">Chuva Suave</span>
+       <span id="iconPlayPause" class="material-symbols-outlined">play_arrow</span>
     </div>
     <audio id="somAmbiente" loop>
       <source id="fonteAudio" src="https://cdn.pixabay.com/audio/2022/08/04/audio_7b75b0d78b.mp3" type="audio/mp3">
@@ -83,16 +84,16 @@
   <div id="modalPerfil" class="modal-perfil">
     <div class="modal-content">
       <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
-      <h2>Meu Perfil 🌙</h2>
+      <h2>Meu Perfil </h2>
       <p class="descricao-perfil">
-        Aqui você pode acompanhar seu bem-estar e progresso emocional 💛
+        Aqui você pode acompanhar seu bem-estar e progresso emocional 
       </p>
       <div class="perfil-opcoes">
-        <button onclick="window.open('../html/perfil.html', '_blank')">👤 Minha Conta [BETA]</button>
+        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta [BETA]</button>
       
-        <button onclick="window.open('../html/configuracoes.html', '_blank')">⚙️ Configurações</button>
+        <button onclick="window.open('../html/configuracoes.html', '_blank')"> Configurações</button>
          
-        <button onclick="logout()">🚪 Sair da conta</button>
+        <button onclick="logout()">Sair da conta</button>
       </div>
     </div>
   </div>

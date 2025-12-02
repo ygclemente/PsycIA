@@ -74,11 +74,11 @@ async function enviarMensagem(event) {
     const alerta = document.createElement("div");
     alerta.className = "message bot alerta";
     alerta.innerHTML = `
-      💛 Parece que você está passando por um momento muito difícil.<br>
+       Parece que você está passando por um momento muito difícil.<br>
       Você <strong>não está sozinho(a)</strong>.<br>
       Procure ajuda imediatamente:<br>
       <strong>CVV – 188</strong> (ligação gratuita e anônima)<br>
-      ou acesse <a href="https://cvv.org.br" target="_blank">cvv.org.br</a> 💬
+      ou acesse <a href="https://cvv.org.br" target="_blank">cvv.org.br</a> 
     `;
     chat.appendChild(alerta);
     chat.scrollTop = chat.scrollHeight;
@@ -99,7 +99,7 @@ async function enviarMensagem(event) {
   const typingMsg = document.createElement("div");
   typingMsg.className = "digitando";
   typingMsg.innerHTML =
-    '💬 PsicIA está digitando <div class="typing-dots"><span></span><span></span><span></span></div>';
+    ' PsycIA está digitando <div class="typing-dots"><span></span><span></span><span></span></div>';
   chat.appendChild(typingMsg);
   chat.scrollTop = chat.scrollHeight;
 
@@ -120,7 +120,7 @@ async function enviarMensagem(event) {
           {
             role: "system",
             content:
-              "Você é PsicIA, uma IA que conversa como um amigo legal. Use linguagem leve, curta (até 500 caracteres), direta e acolhedora. Use emojis. Seja empático e racional.",
+              "Você é PsycIA, uma IA que conversa como um amigo legal. Use linguagem leve, curta e objetiva(até 300 caracteres), direta e acolhedora. Use emojis. Seja empático e racional.",
           },
           { role: "user", content: texto },
         ],
@@ -230,20 +230,36 @@ function logout() {
 
 
 
-// --- Registro de Emoções ---
 function registrarEmocao(emocao) {
-  const hoje = new Date().toLocaleDateString("pt-BR");
-  const historico =
-    JSON.parse(localStorage.getItem("historicoEmocoes")) || [];
-
-  historico.push({ data: hoje, emocao });
-  localStorage.setItem("historicoEmocoes", JSON.stringify(historico));
-
-  const msg = document.getElementById("mensagem-registrada");
-  if (msg) {
-    msg.textContent = `Sua emoção "${emocao}" foi registrada!`;
-    msg.classList.add("show");
-    setTimeout(() => msg.classList.remove("show"), 3000);
-  }
+    let mensagem = "";
+    switch (emocao) {
+        case "Muito Ansioso":
+            mensagem = "Tudo bem sentir-se assim! Vamos respirar juntos?";
+            break;
+        case "Ansioso":
+            mensagem = "Parece que o dia está pesado... quer fazer um exercício de relaxamento?";
+            break;
+        case "Neutro":
+            mensagem = "Tudo bem estar no meio-termo! Que tal um momento de autocuidado?";
+            break;
+        case "Calmo":
+            mensagem = "Que bom ouvir isso! Continue aproveitando essa paz!";
+            break;
+        case "Muito Calmo":
+            mensagem = "Maravilhoso! Vamos manter essa boa energia?";
+            break;
+        default:
+            mensagem = "Emoção registrada!";
+    }
+    document.getElementById("mensagem-registrada").textContent = mensagem;
+    setTimeout(() => {
+        document.getElementById("mensagem-registrada").textContent = "";
+    }, 5000);
+      const msgDiv = document.getElementById("mensagem-registrada");
+  msgDiv.textContent = mensagem;
+  msgDiv.classList.add("show");
+  setTimeout(() => {
+    msgDiv.classList.remove("show");
+    msgDiv.textContent = "";
+  }, 5000);
 }
-  

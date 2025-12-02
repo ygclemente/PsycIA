@@ -18,19 +18,19 @@ botoes.forEach(btn => {
     let mensagem = "";
     switch (emocao) {
       case "Muito Ansioso":
-        mensagem = "Tudo bem sentir-se assim 💛 Vamos respirar juntos?";
+        mensagem = "Tudo bem sentir-se assim !!! Vamos respirar juntos?";
         break;
       case "Ansioso":
         mensagem = "Parece que o dia está pesado... quer fazer um exercício de relaxamento?";
         break;
       case "Neutro":
-        mensagem = "Tudo bem estar no meio-termo 🌿 Que tal um momento de autocuidado?";
+        mensagem = "Tudo bem estar no meio-termo !!! Que tal um momento de autocuidado?";
         break;
       case "Calmo":
-        mensagem = "Que bom ouvir isso 🌸 Continue aproveitando essa paz!";
+        mensagem = "Que bom ouvir isso !!! Continue aproveitando essa paz!";
         break;
       case "Muito Calmo":
-        mensagem = "Maravilhoso! 🌞 Vamos manter essa boa energia?";
+        mensagem = "Maravilhoso! !!! Vamos manter essa boa energia?";
         break;
     }
 
