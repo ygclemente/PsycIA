@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diário</title>
-  <link rel="stylesheet" href="../css/diario.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada de Autoconhecimento</title>
+  <link rel="stylesheet" href="../css/diario.css">
+  <link href="../css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
- 
-
-    <section class="main-area">
-      <div class="container">
-        <h1>Seu Diário Emocional</h1>
-        <p class="subtitle">Escreva sobre seu dia, seus pensamentos ou sentimentos </p>
-
-        <textarea id="diarioTexto" placeholder="Como você está se sentindo hoje?"></textarea>
-
-        <div class="buttons">
-          <button id="salvarBtn" class="btn primary"> Salvar Entrada</button>
-          <button id="voltarBtn" class="btn">Voltar ao Início</button>
-        </div>
-
-        <h2 class="entries-title">Suas Entradas</h2>
-        <div id="entradas"></div>
+   <header>
+    <button onclick="toggleDarkMode()" class="modo-btn" id="darkModeBtn">
+      <i class="fa-regular fa-moon"></i>
+    </button>
+    
+    <div class="logo">
+     <a href="../index.html"> <img src="../img/logo.png" alt="Logo" style="height: 85px;" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href=" ../index.html">Início</a></li>
+        <li><a href=" ../html/sobre.html">Sobre</a></li>
+        <li><a href="#" id="abrirPerfilLink" onclick="abrirPerfil()"><i class="fa-solid fa-user"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Jornada de Autoconhecimento</h1>
+    <div class="data" id="dataHoje"></div>
+    <form id="diario-form">
+      <label for="reflexao">Escreva aqui:</label>
+      <div class="input-group">
+        <textarea id="reflexao" placeholder="Como foi seu dia hoje?" required></textarea>
+        <span class="icon"><i class="fa-regular fa-lightbulb"></i></span>
       </div>
-    </section>
-  </main>
- <!-- Modal de Perfil -->
+      <label for="meta"></label>
+      <div class="input-group">
+        <input type="text" id="meta" placeholder="Uma meta para hoje:" required>
+        <span class="icon"><i class="fa-regular fa-star"></i></span>
+      </div>
+      <input type="text" id="passo" placeholder="Uma coisa para ser grato hoje:" required>
+      <button type="submit">SALVAR ENTRADA</button>
+    </form>
+    <div id="feedback"></div>
+    <section id="entradas"></section>
+  </div>
+
+  <!-- Menu fixo -->
+  <nav class="menu">
+    <button><i class="fa-solid fa-brain"></i><span>Reflexões</span></button>
+    <button><i class="fa-solid fa-check"></i><span>Meu Progresso</span></button>
+    <button><i class="fa-solid fa-star"></i><span>Afirmações</span></button>
+  </nav>
   <div id="modalPerfil" class="modal-perfil">
     <div class="modal-content">
       <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
@@ -35,6 +62,7 @@
         Aqui você pode acompanhar seu bem-estar e progresso emocional 
       </p>
       <div class="perfil-opcoes">
+        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta [BETA]</button>
       
         <button onclick="window.open('html/configuracoes.html', '_blank')"> Configurações</button>
          
@@ -42,6 +70,8 @@
       </div>
     </div>
   </div>
+
   <script src="../js/diario.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,98 +1,92 @@
-const texto = document.getElementById("diarioTexto");
-const salvarBtn = document.getElementById("salvarBtn");
-const voltarBtn = document.getElementById("voltarBtn");
-const entradasDiv = document.getElementById("entradas");
-
-let entradas = JSON.parse(localStorage.getItem("psicia_diario")) || [];
-
-function renderEntradas(){
-  entradasDiv.innerHTML = "";
-  if (entradas.length === 0){
-    const p = document.createElement("p");
-    p.style.opacity = "0.7";
-    p.style.textAlign = "center";
-    p.textContent = "Ainda não há entradas. Escreva algo e clique em Salvar ✨";
-    entradasDiv.appendChild(p);
-    return;
-  }
-
-  entradas.forEach((item, idx) => {
-    const card = document.createElement("div");
-    card.className = "entrada";
-
-    const data = document.createElement("small");
-    data.textContent = item.data;
-    const textoP = document.createElement("p");
-    textoP.style.margin = "0";
-    textoP.textContent = item.texto;
-
-    // botão de apagar (à direita)
-    const btns = document.createElement("div");
-    btns.style.display = "flex";
-    btns.style.justifyContent = "flex-end";
-    btns.style.marginTop = "10px";
-    btns.style.gap = "8px";
-
-    const del = document.createElement("button");
-    del.textContent = "Apagar";
-    del.style.background = "transparent";
-    del.style.color = "#ffc6c6";
-    del.style.border = "none";
-    del.style.cursor = "pointer";
-    del.style.fontWeight = "600";
-    del.onclick = () => {
-      if (!confirm("Deletar essa entrada?")) return;
-      entradas.splice(idx,1);
-      localStorage.setItem("psicia_diario", JSON.stringify(entradas));
-      renderEntradas();
-    };
-
-    // edição rápida
-    const edit = document.createElement("button");
-    edit.textContent = "Editar";
-    edit.style.background = "transparent";
-    edit.style.color = "#cfe0ff";
-    edit.style.border = "none";
-    edit.style.cursor = "pointer";
-    edit.style.fontWeight = "600";
-    edit.onclick = () => {
-      texto.value = item.texto;
-      // remove entrada antiga e foca no textarea para salvar nova versão
-      entradas.splice(idx,1);
-      localStorage.setItem("psicia_diario", JSON.stringify(entradas));
-      renderEntradas();
-      texto.focus();
-    };
-
-    btns.appendChild(edit);
-    btns.appendChild(del);
-
-    card.appendChild(data);
-    card.appendChild(textoP);
-    card.appendChild(btns);
-
-    entradasDiv.appendChild(card);
-  });
+// Data de hoje
+function formatarData() {
+    const hoje = new Date();
+    const opcoes = { day:'2-digit', month:'long', year:'numeric' };
+    document.getElementById("dataHoje").innerText = hoje.toLocaleDateString("pt-BR", opcoes);
 }
 
-salvarBtn.addEventListener("click", () => {
-  const value = texto.value.trim();
-  if (value.length === 0) {
-    texto.focus();
-    return;
+// Carregar entradas salvas
+function carregarEntradas() {
+    const entradas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
+    const section = document.getElementById('entradas');
+    section.innerHTML = '';
+    entradas.slice().reverse().forEach(entrada => adicionarEntradaNaTela(entrada));
+}
+
+// Adicionar entrada na tela
+function adicionarEntradaNaTela({ data, reflexao, meta, passo }) {
+    const div = document.createElement('div');
+    div.className = 'entrada';
+    div.innerHTML = `
+        <div class="data">${data}</div>
+        <div><b>Reflexão:</b> ${reflexao}</div>
+        <div><b>Meta:</b> ${meta}</div>
+        <div><b>Pequeno passo:</b> ${passo}</div>
+    `;
+    document.getElementById('entradas').appendChild(div);
+}
+
+// Salvar nova entrada
+document.addEventListener("DOMContentLoaded", function() {
+    formatarData();
+    carregarEntradas();
+
+    document.getElementById('diario-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const reflexao = document.getElementById('reflexao').value.trim();
+        const meta = document.getElementById('meta').value.trim();
+        const passo = document.getElementById('passo').value.trim();
+        if (!reflexao || !meta || !passo) {
+            document.getElementById("feedback").innerText = "Preencha todos os campos!";
+            setTimeout(()=>document.getElementById("feedback").innerText="",2000);
+            return;
+        }
+        const data = document.getElementById("dataHoje").innerText;
+        const novaEntrada = { data, reflexao, meta, passo };
+        const entradas = JSON.parse(localStorage.getItem('entradasDiario')) || [];
+        entradas.push(novaEntrada);
+        localStorage.setItem('entradasDiario', JSON.stringify(entradas));
+        document.getElementById("feedback").innerText = "✔ Entrada salva!";
+        setTimeout(()=>document.getElementById("feedback").innerText="",2000);
+        document.getElementById('reflexao').value = '';
+        document.getElementById('meta').value = '';
+        document.getElementById('passo').value = '';
+        carregarEntradas();
+    });
+});
+const modalPerfil = document.getElementById("modalPerfil");
+
+function abrirPerfil() {
+  if (modalPerfil) modalPerfil.style.display = "flex";
+}
+
+function fecharPerfil() {
+  if (modalPerfil) modalPerfil.style.display = "none";
+}
+
+// Fecha clicando fora
+if (modalPerfil) {
+  modalPerfil.addEventListener("click", (event) => {
+    if (event.target === modalPerfil) fecharPerfil();
+  });
+
+  const conteudoModal = modalPerfil.querySelector(".modal-content");
+  if (conteudoModal) {
+    conteudoModal.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
   }
+}
 
-  const nova = { texto: value, data: new Date().toLocaleString("pt-BR") };
-  entradas.unshift(nova);
-  localStorage.setItem("psicia_diario", JSON.stringify(entradas));
-  texto.value = "";
-  renderEntradas();
-});
+if (localStorage.getItem("modoNoturno") === "ativo") {
+  document.body.classList.add("dark-mode");
+}
 
-voltarBtn.addEventListener("click", () => {
-  // ação simples: redireciona para a home (ajuste conforme seu projeto)
-  window.location.href = "../index.html";
-});
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem(
+    "modoNoturno",
+    document.body.classList.contains("dark-mode") ? "ativo" : "inativo"
+  );
+}
 
-// inicializa
-renderEntradas();
