@@ -284,7 +284,6 @@ body.dark-mode #painelPassos .fechar-painel {
   padding: 20px;
   font-family: Poppins, sans-serif;
 }
-
 .modal-perfil .modal-content {
   background: #d5f6fd;
   color: #2a2a2a;
@@ -298,19 +297,16 @@ body.dark-mode #painelPassos .fechar-painel {
   flex-direction: column;
   gap: 18px;
 }
-
 .modal-content h2 {
   font-family: Poppins, sans-serif;
   margin: 0;
   font-size: 22px;
   font-weight: 600;
 }
-
 .descricao-perfil {
   font-size: 14px;
   color: #555;
 }
-
 .fechar-modal {
   position: absolute;
   top: 12px;
@@ -322,18 +318,15 @@ body.dark-mode #painelPassos .fechar-painel {
   color: #666;
   transition: transform 0.2s, color 0.2s;
 }
-
 .fechar-modal:hover {
   color: #000;
   transform: scale(1.1);
 }
-
 .perfil-opcoes {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 .perfil-opcoes button {
   font-family: Poppins, sans-serif;
   padding: 12px;
@@ -347,7 +340,6 @@ body.dark-mode #painelPassos .fechar-painel {
   transition: all 0.3s ease;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
-
 .perfil-opcoes button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
