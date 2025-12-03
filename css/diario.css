@@ -1,0 +1,141 @@
+
+.diario-psicia {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 25px;
+    font-family: "Poppins", sans-serif;
+    color: #071e3d;
+}
+
+
+.titulo-diario {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    color: #052959;
+    margin-bottom: 30px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+.grid-inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 22px;
+    height: 350px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.18);
+}
+
+.box h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #022b69;
+    margin-bottom: 12px;
+}
+
+
+.texto {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #80b7ff;
+    resize: none;
+    font-size: 15px;
+    background: #f3f8ff;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.texto:focus {
+    border-color: #052959;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 151, 178, 0.4);
+}
+
+
+.acoes {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-acao {
+    background: #071e3d;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.18);
+}
+
+.btn-acao:hover {
+    
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 950px) {
+    .grid-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        height: auto;
+    }
+}
+
+
+body.dark-mode .diario-psicia {
+    color: #f4f4f4;
+}
+
+body.dark-mode .titulo-diario {
+    color: #ffffff;
+}
+
+body.dark-mode .box {
+    background: #0b2748;
+    border: 1px solid #08345c;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .box h2 {
+    color: #4594fc;
+}
+
+body.dark-mode .texto {
+    background: #05233f;
+    color: #e3faff;
+    border-color: #aeebf0;
+}
+
+body.dark-mode .texto:focus {
+    background: #0a3b63;
+}
+
+body.dark-mode .btn-acao {
+    background: #0b3a63;
+}
+
