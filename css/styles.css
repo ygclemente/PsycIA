@@ -501,7 +501,7 @@ body.dark-mode .modo-btn {
   background: transparent;
 }
 body.dark-mode .modo-btn:hover {
-  background-color: #274472;
+ 
   color: #e0e6ed;
   transform: rotate(-20deg) scale(1.1);
 }
@@ -590,17 +590,7 @@ body.dark-mode .card-membro p {
 body.dark-mode .descricao-site {
   color: white;
 }
-.footer-sobre {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
 
-}
-.footer-sobre a{
-  text-decoration: none;
-  color: #879fcc;
-}
 .card-perfil{
   margin-left: 5%;
   margin-right: 5%;

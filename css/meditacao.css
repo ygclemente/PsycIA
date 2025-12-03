@@ -2,15 +2,17 @@
 
 /* ======= BASE ======= */
 body {
-  background: linear-gradient(120deg, #e6f6fc, #b3e0f7);
+
   font-family: 'Poppins', Arial, sans-serif;
-  color: #144b75;
+  
   margin: 0;
   min-height: 100vh;
   text-align: center;
+  background: #d5f6fd;
+  overflow-x: hidden;
+  color: #1a1a3f;
 }
 
-/* ======= HEADER ======= */
 header {
   background: url(../img/header.png);
   display: flex;
@@ -117,6 +119,64 @@ nav a {
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
 }
 
+
+/* ===== Container ===== */
+.container {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+.modal-perfil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  font-family: Poppins, sans-serif;
+}
+.modal-perfil .modal-content {
+  background: #d5f6fd;
+  color: #2a2a2a;
+  border-radius: 20px;
+  padding: 30px;
+  width: 340px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.modal-content h2 {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+.descricao-perfil {
+  font-size: 14px;
+  color: #555;
+}
+.fechar-modal {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #666;
+  transition: transform 0.2s, color 0.2s;
+}
+.fechar-modal:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+
 .modo-btn {
   background: transparent;
   border: 2px solid #fff;
@@ -152,7 +212,7 @@ body.dark-mode .modo-btn:hover {
   color: #e0e6ed;
 }
 
-/* ======= TÍTULO E TEXTOS ======= */
+
 h1 {
   font-size: 2em;
   margin-top: 30px;
@@ -162,7 +222,7 @@ h1 {
   margin-top: 15px;
 }
 
-/* ======= SELEÇÃO DE TIPO E TEMPO ======= */
+
 .selecao {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -185,7 +245,7 @@ body.dark-mode .selecao select {
   border-color: #4970c0;
 }
 
-/* ======= BOTÕES ======= */
+
 button {
   background-color: #1b7ec0c2;
   color: white;
@@ -198,14 +258,14 @@ button {
   transition: background .3s, transform .2s;
 }
 button:hover {
-  background: #4970c0cc;
+ 
   transform: scale(1.05);
 }
 body.dark-mode button {
   background-color: #4970c0cc;
 }
 
-/* ======= TIMER CIRCULAR ======= */
+
 .timer-container {
   position: relative;
   width: 180px;
