@@ -263,3 +263,6 @@ function registrarEmocao(emocao) {
     msgDiv.textContent = "";
   }, 5000);
 }
+function abrirDiario() {
+  window.location.href = "html/diario.html";
+}

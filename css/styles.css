@@ -622,4 +622,10 @@ box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.93);
   text-align: center;
   padding-top:26px ;
 }
+.botoes {
+    gap: 10px;
+}
 
+.botoes button {
+    margin: 0;
+}

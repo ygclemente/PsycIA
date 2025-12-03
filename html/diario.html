@@ -27,49 +27,38 @@
       </ul>
     </nav>
   </header>
-  <div class="container">
-    <h1>Jornada de Autoconhecimento</h1>
-    <div class="data" id="dataHoje"></div>
-    <form id="diario-form">
-      <label for="reflexao">Escreva aqui:</label>
-      <div class="input-group">
-        <textarea id="reflexao" placeholder="Como foi seu dia hoje?" required></textarea>
-        <span class="icon"><i class="fa-regular fa-lightbulb"></i></span>
-      </div>
-      <label for="meta"></label>
-      <div class="input-group">
-        <input type="text" id="meta" placeholder="Uma meta para hoje:" required>
-        <span class="icon"><i class="fa-regular fa-star"></i></span>
-      </div>
-      <input type="text" id="passo" placeholder="Uma coisa para ser grato hoje:" required>
-      <button type="submit">SALVAR ENTRADA</button>
-    </form>
-    <div id="feedback"></div>
-    <section id="entradas"></section>
-  </div>
+<div class="diario-psicia">
 
-  <!-- Menu fixo -->
-  <nav class="menu">
-    <button><i class="fa-solid fa-brain"></i><span>Reflexões</span></button>
-    <button><i class="fa-solid fa-check"></i><span>Meu Progresso</span></button>
-    <button><i class="fa-solid fa-star"></i><span>Afirmações</span></button>
-  </nav>
-  <div id="modalPerfil" class="modal-perfil">
-    <div class="modal-content">
-      <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
-      <h2>Meu Perfil </h2>
-      <p class="descricao-perfil">
-        Aqui você pode acompanhar seu bem-estar e progresso emocional 
-      </p>
-      <div class="perfil-opcoes">
-        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta [BETA]</button>
-      
-        <button onclick="window.open('html/configuracoes.html', '_blank')"> Configurações</button>
-         
-        <button onclick="logout()"> Sair da conta</button>
-      </div>
+    <h1 class="titulo-diario">Diário</h1>
+
+    <div class="grid-inputs">
+
+        <div class="box">
+            <h2>Como foi seu dia?</h2>
+            <textarea class="texto" placeholder="Descreva suas emoções, vivências e pensamentos de hoje..."></textarea>
+        </div>
+
+        <div class="box">
+            <h2>Metas do dia</h2>
+            <textarea class="texto" placeholder="Liste suas metas, tarefas importantes ou objetivos..."></textarea>
+        </div>
+
+        <div class="box">
+            <h2>Gratidão do dia</h2>
+            <textarea class="texto" placeholder="O que te trouxe alegria ou conforto hoje?"></textarea>
+        </div>
+
     </div>
-  </div>
+
+    <div class="acoes">
+        <button class="btn-acao">Salvar</button>
+        <button class="btn-acao">Ver Anotações</button>
+        <button class="btn-acao">Metas</button>
+        <button class="btn-acao">Dias Anteriores</button>
+       <a href="../index.html"><button class="btn-acao">Voltar</button></a> 
+    </div>
+
+</div>
 
   <script src="../js/diario.js"></script>
   <script src="../js/script.js"></script>
