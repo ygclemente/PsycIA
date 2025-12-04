@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada de Autoconhecimento</title>
+  <link rel="stylesheet" href="../css/diario.css">
+  <link href="../css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+   <header>
+    <button onclick="toggleDarkMode()" class="modo-btn" id="darkModeBtn">
+      <i class="fa-regular fa-moon"></i>
+    </button>
+    
+    <div class="logo">
+     <a href="../index.html"> <img src="../img/logo.png" alt="Logo" style="height: 85px;" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href=" ../index.html">Início</a></li>
+        <li><a href=" ../html/sobre.html">Sobre</a></li>
+        <li><a href="#" id="abrirPerfilLink" onclick="abrirPerfil()"><i class="fa-solid fa-user"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+<div class="diario-psicia">
+
+    <h1 class="titulo-diario">Diário</h1>
+
+    <div class="grid-inputs">
+
+        <div class="box">
+            <h2>Como foi seu dia?</h2>
+            <textarea class="texto" placeholder="Descreva suas emoções, vivências e pensamentos de hoje..."></textarea>
+        </div>
+
+        <div class="box">
+            <h2>Metas do dia</h2>
+            <textarea class="texto" placeholder="Liste suas metas, tarefas importantes ou objetivos..."></textarea>
+        </div>
+
+        <div class="box">
+            <h2>Gratidão do dia</h2>
+            <textarea class="texto" placeholder="O que te trouxe alegria ou conforto hoje?"></textarea>
+        </div>
+
+    </div>
+
+    <div class="acoes">
+        <button class="btn-acao">Salvar</button>
+        <button class="btn-acao">Ver Anotações</button>
+        <button class="btn-acao">Metas</button>
+        <button class="btn-acao">Dias Anteriores</button>
+       <a href="../index.html"><button class="btn-acao">Voltar</button></a> 
+    </div>
+
+</div>
+
+  <script src="../js/diario.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PsycIA</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+<body>
+  <header>
+    <button onclick="toggleDarkMode()" class="modo-btn" id="darkModeBtn">
+      <i class="fa-regular fa-moon"></i>
+    </button>
+
+    <div class="logo">
+      <a href="../PsycIA-main/index.html"> <img src="img/logo.png" alt="Logo" style="height: 85px;" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href=" ../PsycIA-main/index.html">Início</a></li>
+        <li><a href="../PsycIA-main/html/sobre.html">Sobre</a></li>
+        <li><a href="#" id="abrirPerfilLink" onclick="abrirPerfil()"><i class="fa-solid fa-user"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <div class="intro">
+      <div class="intro-icon"></div>
+      <h2>Como posso te ajudar hoje?</h2>
+      <span id="boas-vindas"></span>
+    </div>
+
+    <!-- Emoções -->
+    <section id="emocoes">
+      <div class="botoes-emocoes">
+        <button class="muito-ansioso" onclick="registrarEmocao('Muito Ansioso')">
+          <span class="material-symbols-outlined">sentiment_very_dissatisfied</span>
+          Muito Ansioso
+        </button>
+        <button class="ansioso" onclick="registrarEmocao('Ansioso')">
+          <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+          Ansioso
+        </button>
+        <button class="neutro" onclick="registrarEmocao('Neutro')">
+          <span class="material-symbols-outlined">sentiment_neutral</span>
+          Neutro
+        </button>
+        <button class="calmo" onclick="registrarEmocao('Calmo')">
+          <span class="material-symbols-outlined">sentiment_satisfied</span>
+          Calmo
+        </button>
+        <button class="muito-calmo" onclick="registrarEmocao('Muito Calmo')">
+          <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+          Muito Calmo
+        </button>
+      </div>
+      <div id="mensagem-registrada"></div>
+    </section>
+
+    <p id="mensagem">Selecione uma emoção acima </p>
+
+    <!-- AÇÕES RÁPIDAS -->
+    <section class="quick-actions">
+      <h3>Ações Rápidas</h3>
+
+      <div class="actions-grid">
+
+        <!-- RESPIRAR -->
+        <div class="action-card" onclick="abrirRespiracao()">
+          <div class="icon1">
+            <span class="material-symbols-outlined">pulmonology</span>
+          </div>
+          <h4>Respirar</h4>
+          <p>Exercício rápido</p>
+        </div>
+
+        <!-- MEDITAR -->
+        <div class="action-card" onclick="abrirMeditacao()">
+          <div class="icon2">
+            <span class="material-symbols-outlined">self_improvement</span>
+          </div>
+          <h4>Meditar</h4>
+          <p>Meditação curta</p>
+        </div>
+
+        <!-- AJUDA -->
+        <div class="action-card" onclick="acharPsicologos()">
+          <div class="icon3">
+            <span class="material-symbols-outlined">person_search</span>
+          </div>
+          <h4>Ajuda</h4>
+          <p>Buscar psicólogos <br> perto de você</p>
+        </div>
+
+        <!-- DIÁRIO -->
+        <div class="action-card" onclick="abrirDiario()">
+          <div class="icon4">
+            <span class="material-symbols-outlined">menu_book</span>
+          </div>
+          <h4>Diário [BETA]</h4>
+          <p>Escreva sobre seu dia!</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Chat -->
+    <div id="chatBox" class="chat-container"></div>
+    <div class="chat-bar-container" id="chatBar">
+      <input type="text" id="userInput" placeholder="Como está se sentindo hoje?" />
+      <button onclick="enviarMensagem(event)">
+        <img src="img/envir.png" alt="Enviar" />
+      </button>
+    </div>
+  </main>
+
+  <!-- Modal de Perfil -->
+  <div id="modalPerfil" class="modal-perfil">
+    <div class="modal-content">
+      <button class="fechar-modal" onclick="fecharPerfil()">✖</button>
+      <h2>Meu Perfil </h2>
+      <p class="descricao-perfil">
+        Aqui você pode acompanhar seu bem-estar e progresso emocional
+      </p>
+      <div class="perfil-opcoes">
+        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta
+          [BETA]</button>
+
+
+
+        <button onclick="logout()"> Sair da conta</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
+
+
+
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

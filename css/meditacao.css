@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ======= RESET BOX-SIZING ======= */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ======= BASE ======= */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  text-align: center;
+  background: #d5f6fd;
+  overflow-x: hidden;
+  color: #1a1a3f;
+}
+
+/* ======= HEADER ======= */
+header {
+  background: url(../img/header.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 85px;
+  transition: height 0.3s ease;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  transition: transform 0.4s;
+}
+
+nav li:hover {
+  transform: translateY(-5px);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.modo-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modo-btn:hover {
+  background: #fff;
+  color: #226fa4;
+  transform: scale(1.1);
+}
+
+/* ======= DARK MODE ======= */
+body.dark-mode {
+  background: linear-gradient(135deg, #0a1622, #101926);
+  color: #e0e6ed;
+}
+
+body.dark-mode header {
+  background: url(../img/header2.png);
+  background-size: cover;
+  background-position: center;
+}
+
+body.dark-mode nav a {
+  color: #e0e6ed;
+}
+
+body.dark-mode .modo-btn {
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+body.dark-mode .modo-btn:hover {
+  background: #274472;
+  color: #e0e6ed;
+}
+
+/* ======= MAIN CONTENT ======= */
+h1 {
+  font-size: 2em;
+  margin-top: 30px;
+}
+
+.orientacao,
+.incentivo {
+  margin-top: 15px;
+}
+
+.selecao {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.selecao label,
+.selecao select {
+  font-size: 0.98em;
+  margin-right: 0.5em;
+}
+
+.selecao select {
+  padding: 0.4em 0.8em;
+  border-radius: 0.7em;
+  border: 1px solid #bcdff1;
+  background-color: #e0f2fa;
+  color: #144b75;
+}
+
+body.dark-mode .selecao select {
+  background-color: #232a36;
+  color: #e0e6ed;
+  border-color: #4970c0;
+}
+
+button {
+  background-color: #1b7ec0c2;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+body.dark-mode button {
+  background-color: #4970c0cc;
+}
+
+/* ======= TIMER ======= */
+.timer-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 30px auto;
+}
+
+.timer-container svg {
+  transform: rotate(-90deg);
+}
+
+.timer-container circle {
+  fill: none;
+  stroke-width: 12;
+}
+
+.timer-bg {
+  stroke: #b3e0f7;
+}
+
+.timer-progress {
+  stroke: #3695d4;
+  stroke-linecap: round;
+}
+
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  font-weight: 600;
+  color: #144b75;
+}
+
+body.dark-mode .timer-text {
+  color: #58a6ff;
+}
+
+body.dark-mode .timer-bg {
+  stroke: #232a36;
+}
+
+body.dark-mode .timer-progress {
+  stroke: #58a6ff;
+}
+
+/* ======= PAINEL DE PASSOS ======= */
+#painelPassos {
+  display: none;
+  background: #e0f2fa;
+  color: #144b75;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin: 30px auto;
+  max-width: 350px;
+  padding: 18px;
+  text-align: left;
+  position: relative;
+}
+
+#painelPassos h3 {
+  margin-top: 0;
+}
+
+#passoAtual {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.passo-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+#painelPassos button {
+  border-radius: 14px;
+  padding: 8px 18px;
+}
+
+#painelPassos .fechar-painel {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  color: #4970c0;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+body.dark-mode #painelPassos {
+  background: #232a36;
+  color: #e0e6ed;
+}
+
+body.dark-mode #painelPassos .fechar-painel {
+  color: #7ecfff;
+}
+
+/* ======= MODAL PERFIL ======= */
+.modal-perfil {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  font-family: Poppins, sans-serif;
+}
+.modal-perfil .modal-content {
+  background: #d5f6fd;
+  color: #2a2a2a;
+  border-radius: 20px;
+  padding: 30px;
+  width: 340px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.modal-content h2 {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+.descricao-perfil {
+  font-size: 14px;
+  color: #555;
+}
+.fechar-modal {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #666;
+  transition: transform 0.2s, color 0.2s;
+}
+.fechar-modal:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+.perfil-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.perfil-opcoes button {
+  font-family: Poppins, sans-serif;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  background: linear-gradient(135deg, #11253b54, #a5d9f8);
+  color: #2a2a2a;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.perfil-opcoes button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .modal-content {
+  background: #232a36;
+  color: #e0e6ed;
+}
+
+/* ======= RESPONSIVO ======= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .logo {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  nav {
+    order: 2;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .modo-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    order: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    font-size: 15px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 15px 20px 15px;
+    gap: 12px;
+  }
+
+  .logo {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  nav {
+    order: 2;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  nav li {
+    width: auto;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 0.95em;
+    padding: 6px 0;
+    width: auto;
+    justify-content: center;
+  }
+
+  .modo-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    order: 3;
+  }
+
+  main {
+    padding: 0.5em;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+
+  .selecao {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+  }
+
+  .selecao label,
+  .selecao select {
+    font-size: 0.95em;
+    margin-right: 0.2em;
+    margin-bottom: 0.3em;
+  }
+
+  .timer-container {
+    width: 140px;
+    height: 140px;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
+  }
+
+  .timer-container svg {
+    width: 140px;
+    height: 140px;
+  }
+
+  .timer-text {
+    font-size: 1.4em;
+  }
+
+  #painelPassos {
+    max-width: 95vw;
+    padding: 0.8em;
+    font-size: 0.98em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #painelPassos h3 {
+    font-size: 0.98em;
+  }
+
+  #passoAtual {
+    font-size: 0.98em;
+  }
+
+  .modal-perfil .modal-content,
+  .modal-content {
+    width: min(95vw, 340px);
+    min-width: auto;
+    padding: 0.9em;
+    font-size: 0.98em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo img {
+    height: 50px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 0.9em;
+  }
+
+  .modo-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
