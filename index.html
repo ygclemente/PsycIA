@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
 
 <body>
   <header>
@@ -20,12 +21,13 @@
     </div>
     <nav>
       <ul>
-        <li><a href=" ../PsycIA-main/index.html">Início</a></li>
+        <li><a href="../PsycIA-main/index.html">Início</a></li>
         <li><a href="../PsycIA-main/html/sobre.html">Sobre</a></li>
         <li><a href="#" id="abrirPerfilLink" onclick="abrirPerfil()"><i class="fa-solid fa-user"></i></a></li>
       </ul>
     </nav>
   </header>
+
   <main class="container">
     <div class="intro">
       <div class="intro-icon"></div>
@@ -107,7 +109,6 @@
       </div>
     </section>
 
-
     <!-- Chat -->
     <div id="chatBox" class="chat-container"></div>
     <div class="chat-bar-container" id="chatBar">
@@ -127,25 +128,13 @@
         Aqui você pode acompanhar seu bem-estar e progresso emocional
       </p>
       <div class="perfil-opcoes">
-        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta
-          [BETA]</button>
-
-
-
+        <button onclick="alert('Minha conta está em desenvolvimento! Em breve estará disponível.')"> Minha Conta [BETA]</button>
         <button onclick="logout()"> Sair da conta</button>
       </div>
     </div>
   </div>
 
-
-</body>
-
-</html>
-
-
-
-
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
