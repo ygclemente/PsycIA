@@ -1,7 +1,4 @@
-Perfeito 👍
-Aqui está o **README completo, atualizado e pronto para copiar e colar**, incluindo **PHP + XAMPP + Banco de Dados**, escrito de forma profissional e clara:
 
----
 
 # 🧠 PsycIA — Plataforma de Apoio Emocional Inteligente
 
