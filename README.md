@@ -81,9 +81,7 @@ Com base nisso, o sistema adapta a experiência e sugere ações.
 * Histórico emocional por usuário
 * Gráficos de humor
 * Sistema de níveis e progresso
-* Chat com IA para apoio emocional
 * Área administrativa
-* Modo escuro avançado
 
 ---
 
